@@ -1,9 +1,9 @@
 body {
-    background-image:url("https://static.pexels.com/photos/14676/pexels-photo-14676.png");
+    background-color:#FFFFFF;
 }
 
 .form-control {
-    height: 18px;
+    height: 15px;
 }
 
 .browsehappy {
@@ -15,8 +15,8 @@ body {
 
 /* Space out content a bit */
 body {
-    padding-top: 20px;
-    padding-bottom: 20px;
+    padding-top: 10px;
+    padding-bottom: 10px;
 }
 
 /* Everything but the jumbotron gets side spacing for mobile first views */
@@ -29,7 +29,7 @@ body {
 
 /* Custom page header */
 .header {
-    border-bottom: 1px solid yellow;
+    border-bottom: 1px solid black;
 }
 
 /* Make the masthead heading the same height as the navigation */
@@ -60,15 +60,15 @@ body {
 
 /* Google Map! */
 #map {
-    height: 500px;
+    height: 550px;
     width: 500px;
-    border: 3px solid orange;
+    border: 5px solid black;
     box-shadow: 4px 4px yellow;
 
 }
 
 /* Responsive: Portrait tablets and up */
-@media screen and (min-width: 768px) {
+@media screen and (min-width: 50px) {
     .container {
         max-width: 1120px;
     }
@@ -83,7 +83,7 @@ body {
 
     /* Space out the masthead */
     .header {
-        margin-bottom: 30px;
+        margin-bottom: 50px;
     }
 
 }

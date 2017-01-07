@@ -23,8 +23,8 @@ addCtrl.controller('addCtrl', function($scope, $http, $rootScope, geolocation, g
         $scope.formData.longitude = parseFloat(coords.long).toFixed(3);
         $scope.formData.latitude = parseFloat(coords.lat).toFixed(3);
 
-        // Display message confirming that the coordinates verified.
-        $scope.formData.htmlverified = "Yep (Thanks for giving us real data!)";
+        // // Display message confirming that the coordinates verified.
+        // $scope.formData.htmlverified = "Yep (Thanks for giving us real data!)";
 
         gservice.refresh($scope.formData.latitude, $scope.formData.longitude);
 
@@ -40,21 +40,21 @@ addCtrl.controller('addCtrl', function($scope, $http, $rootScope, geolocation, g
         $scope.$apply(function(){
             $scope.formData.latitude = parseFloat(gservice.clickLat).toFixed(3);
             $scope.formData.longitude = parseFloat(gservice.clickLong).toFixed(3);
-            $scope.formData.htmlverified = "Nope (Thanks for spamming my map...)";
+            // $scope.formData.htmlverified = "Nope (Thanks for spamming my map...)";
         });
     });
 
-    // Function for refreshing the HTML5 verified location (used by refresh button)
-    $scope.refreshLoc = function(){
-        geolocation.getLocation().then(function(data){
-            coords = {lat:data.coords.latitude, long:data.coords.longitude};
+    // // Function for refreshing the HTML5 verified location (used by refresh button)
+    // $scope.refreshLoc = function(){
+    //     geolocation.getLocation().then(function(data){
+    //         coords = {lat:data.coords.latitude, long:data.coords.longitude};
 
-            $scope.formData.longitude = parseFloat(coords.long).toFixed(3);
-            $scope.formData.latitude = parseFloat(coords.lat).toFixed(3);
-            $scope.formData.htmlverified = "Yep (Thanks for giving us real data!)";
-            gservice.refresh(coords.lat, coords.long);
-        });
-    };
+    //         $scope.formData.longitude = parseFloat(coords.long).toFixed(3);
+    //         $scope.formData.latitude = parseFloat(coords.lat).toFixed(3);
+    //         $scope.formData.htmlverified = "Yep (Thanks for giving us real data!)";
+    //         gservice.refresh(coords.lat, coords.long);
+    //     });
+    // };
 
     // Creates a new user based on the form fields
     $scope.createUser = function() {
@@ -68,8 +68,8 @@ addCtrl.controller('addCtrl', function($scope, $http, $rootScope, geolocation, g
             area: $scope.formData.area,
             description: $scope.formData.description,
             phone: $scope.formData.phone,
-            location: [$scope.formData.longitude, $scope.formData.latitude],
-            htmlverified: $scope.formData.htmlverified
+            location: [$scope.formData.longitude, $scope.formData.latitude]
+            // htmlverified: $scope.formData.htmlverified
         };
 
         // Saves the user data to the db

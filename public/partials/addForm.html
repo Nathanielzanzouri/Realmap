@@ -1,5 +1,5 @@
 <!-- "Join Team" (Post) Form -->
-<div class="col-md-5" style="height: 500px;">
+<div class="col-md-5" style="height: 400px;">
 
     <!-- Creates Main Panel -->
     <div class="panel panel-default" style="height: 550px;">
@@ -13,7 +13,7 @@
         <div class="panel-body" style="height:700px;font-size: 10px;">
 
             <!-- Creates Form (novalidate disables HTML validation, Angular will control) -->
-            <form name ="addForm" style="height:700px;" novalidate>
+            <form name ="addForm" style="height:400px;" novalidate>
 
                 <!-- Text Boxes and Other User Inputs. Note ng-model binds the values to Angular $scope -->
                 <div class="form-group">
@@ -26,8 +26,8 @@
                 </div>
                 <label class="radio control-label">Rooms</label>
                 <label class="checkbox-inline">
-                        <input type="radio" name="optionsRadios" id="radiostudio" value="Studio" ng-model="formData.rooms">
-                       Studio
+                        <input type="radio" name="optionsRadios" id="radioone" value="1" ng-model="formData.rooms">
+                       1
                 </label>
 
                     <label class="checkbox-inline">
@@ -76,11 +76,11 @@
                 </div>
                 <div class="form-group">
                     <!-- Note RefreshLoc button tied to addCtrl. This requests a refresh of the HTML5 verified location. -->
-                    <label for="verified" >HTML5 Verified Location? <span><button ng-click="refreshLoc()" class="btn btn-default btn-xs"><span class="glyphicon glyphicon-refresh"></span></button></span></label>
+                   <!--  <label for="verified" >HTML5 Verified Location? <span><button ng-click="refreshLoc()" class="btn btn-default btn-xs"><span class="glyphicon glyphicon-refresh"></span></button></span></label>
                     <input type="text" class="form-control" id="verified" placeholder= "Nope (Thanks for spamming my map...)" ng-model="formData.htmlverified" style="height: 15px;" readonly>
-                </div>
+                </div> -->
                 <!-- Submit button. Note that its tied to createUser() function from addCtrl. Also note ng-disabled logic which prevents early submits.  -->
-                <button type="submit" class="btn btn-danger btn-block" ng-click="createUser()" ng-disabled="addForm.$invalid" style="height: 20px; width: 60px; text-align:center; margin: auto; font-size: 15px; vertical-align:middle; padding: 0px;">Post</button>
+                <button type="submit" class="btn btn-danger btn-block" ng-click="createUser()" ng-disabled="addForm.$invalid" style="height: 20px; width: 60px; text-align:center; margin: auto; font-size: 15px; vertical-align:middle; padding: 0px;background-color: yellow; color:black;">Post</button>
             </form>
         </div>
     </div>

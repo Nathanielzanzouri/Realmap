@@ -48,7 +48,7 @@ module.exports = function(app) {
         var lat             = req.body.latitude;
         var long            = req.body.longitude;
         var distance        = req.body.distance;
-        var studio          = req.body.studio;
+        var one          = req.body.one;
         var two             = req.body.two;
         var tree            = req.body.tree;
         var four            = req.body.four;
@@ -59,7 +59,7 @@ module.exports = function(app) {
         var maxArea         = req.body.maxArea;
         var description     = req.body.description;
         var phone           = req.body.phone;
-        var reqVerified     = req.body.reqVerified;
+        // var reqVerified     = req.body.reqVerified;
 
         // Opens a generic Mongoose Query. Depending on the post body we will...
         var query = User.find({});
@@ -76,8 +76,8 @@ module.exports = function(app) {
         }
 
         // ...include filter by rooms (all options)
-        if(two || tree || four || five || studio ){
-            query.or([{ 'rooms': two }, { 'rooms': tree }, {'rooms': four} ,{'rooms': five}, {'rooms': studio}]);
+        if(one || two || tree || four || five){
+            query.or([{'rooms': one},{ 'rooms': two }, { 'rooms': tree }, {'rooms': four} ,{'rooms': five}]);
         }
 
         // ...include filter by Min price
@@ -100,10 +100,10 @@ module.exports = function(app) {
             query = query.where('area').lte(maxArea);
         }
 
-        // ...include filter for HTML5 Verified Locations
-        if(reqVerified){
-            query = query.where('htmlverified').equals("Yep (Thanks for giving us real data!)");
-        }
+        // // ...include filter for HTML5 Verified Locations
+        // if(reqVerified){
+        //     query = query.where('htmlverified').equals("Yep (Thanks for giving us real data!)");
+        // }
 
         // Execute Query and Return the Query Results
         query.exec(function(err, users){
